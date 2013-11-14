@@ -1,0 +1,385 @@
+/*
+Title: Brooklyn Beta
+Author: Yaron Schoen
+Author URL: http://yaronschoen.com
+*/
+
+@charset "UTF-8";
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Reset
+----------------------------------------------------------------------------------------------------------
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;}
+table{border-collapse:separate;border-spacing:0;margin-bottom:1.4em;}
+caption,th,td{text-align:left;font-weight:400;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+blockquote,q{quotes:;}
+a img{border:0 none;}
+* {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+@-o-viewport                        { width: device-width;}
+@-ms-viewport                   { width: device-width;}
+@viewport                           { width: device-width;}
+html                                        { overflow-y: auto;}
+img,
+audio,
+video,
+canvas                                  { width: 100%;}
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Floats
+----------------------------------------------------------------------------------------------------------
+*/
+
+.left                                   { float:left; }
+.right                                  { float:right; }
+.left-text                          { text-align:left }
+.right-text                         { text-align:right }
+.center-text                        { text-align:center }
+.clear                                  { clear:both; display:block; overflow:hidden; visibility:hidden; width:0; height:0 }
+.clearfix:after                 { clear:both; content:''; display:block; font-size:0; line-height:0; visibility:hidden; width:0; height:0 }
+* html .clearfix,
+*:first-child+html .clearfix        { zoom:1 }
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Main Layout
+----------------------------------------------------------------------------------------------------------
+*/
+
+html, body                          { height: 100% }
+body                                        { background-color: white;}
+.wrapper                                { display:table; width:100%; height:100%; margin:auto;}
+.cell                                       { display:table-cell; width:100%; vertical-align:middle; position:relative; }
+.page                                       { max-width:600px; width:92%; margin-left:auto; margin-right:auto;}
+.footer                                 { background-color: #ff4c36; padding: 4em 0; font-size: 0.6em; color:white; margin-top: 10em}
+hr                                          { border-top: 1px solid #e0dcd3; border-bottom: 0; border-right: 0; border-left: 0; margin: 2.5em 0;}
+hr.small                                { border-top: 1px solid #eeeae2; width: 4em; border-bottom: 0; border-right: 0; border-left: 0; margin: 1em auto;}
+
+/* Grid */
+
+.container                          { clear:both; width:92%; max-width: 1100px; margin:0px auto; position: relative; }
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-half,
+.grid-full,
+.grid-unit,
+.grid-quater                        { float: left; width:96.969696969697%; margin:0 1.515151515152% 1em; }
+
+.grid-1                             { width: 13.636363636364%; }
+.grid-2                             { width: 30.30303030303%; }
+.grid-3,
+.grid-half                          { width: 46.969696969697%; }
+.grid-4                             { width: 63.636363636364%; }
+.grid-5                             { width: 80.30303030303%; }
+.grid-6,
+.grid-full                          { width: 96.969696969697%; }
+.grid-quater                        { width: 21.5%; }
+.no-bottom-margin               { margin-bottom: 0 }
+
+/* Extra Elements */
+
+.tickets                                { background-color: rgba(0,0,0,0.2); width: 100%; position: absolute; bottom: 0; }
+.quote-card                         { background-color: white; padding: 2em; height: 15em; border-bottom: 1px solid #e0dcd3; margin-bottom: 1em}
+.sponsor                                { background-color: #00a6a7; padding: 1em; text-align: center}
+.schedule                               { background-color: #870002; color: white; }
+.schedule-listing               { border: 1px solid #e0dcd3; padding: 2em; margin-bottom: 4em}
+.schedule-listing-card  { background-color: white; padding: 2em; height: 8em; border-bottom: 1px solid #e0dcd3; margin-bottom: 1em}
+.attendee-card                  { background-color: white; padding: .4em .4em 2em .4em; border: 1px solid #e0dcd3; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.beyond-card                        { background-color: white; padding: 1em; border: 1px solid #e0dcd3; height: 26em; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.beyond-card img                { height: 291px; margin-bottom: .5em }
+.planning-card                  { background-color: white; padding: 1.5em; border: 1px solid #e0dcd3; height: 12em; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; text-align: center}
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Banners
+----------------------------------------------------------------------------------------------------------
+*/
+
+.banner-main                        { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bg-main.jpg); background-position: center center; -webkit-background-size: cover;   -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+#beyond .banner-main        { background-color: #00bebe; text-align: center; border-bottom: 1px solid #006060; background-image: url(/img/2013/bg-beyond.jpg); background-position: center center; -webkit-background-size: cover; -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+#schedule .banner-main  { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bg-logistics.jpg); background-position: center center; -webkit-background-size: cover;  -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+#attendees .banner-main { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bg-attendees.jpg); background-position: center center; -webkit-background-size: cover;  -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+.banner-love                        { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bbridge.jpg); background-position: center center; -webkit-background-size: cover;   -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+
+#beyond .banner-love        { background-color: #00bebe; text-align: center; border-bottom: 1px solid #006060; background-image: url(/img/2013/bbeyond.jpg); background-position: center center; -webkit-background-size: cover;   -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+#schedule .banner-love  { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bbschedule.jpg); background-position: center center; -webkit-background-size: cover;    -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+#attendees .banner-love { background-color: #ac0818; text-align: center; border-bottom: 1px solid #75000b; background-image: url(/img/2013/bbattendees.jpg); background-position: center center; -webkit-background-size: cover;   -moz-background-size: cover;    -o-background-size: cover;  background-size: cover;}
+
+.banner-beige-nm                { background-color: #f8f4eb; padding: 4em 0; border-bottom: 1px solid #e0dcd3; text-align: center;  }
+.banner-beige                       { background-color: #f8f4eb; padding: 4em 0; border-bottom: 1px solid #e0dcd3; border-top: 1px solid #e0dcd3;}
+.banner-people                  { height: 403px; background-image: url(/img/2013/bb-people.jpg); width: 100%; background-position: center center;}
+.banner-white                       { background-color: #ffffff; padding: 4em 0;}
+.banner-green                       { background-color: #00bebe; padding: 4em 0; border-bottom: 1px solid #009fa0;border-top: 1px solid #009fa0;}
+.banner-red                         { background-color: #ac0818; padding: 4em 0; text-align: center;  }
+.banner-dark                        { background-color: #362b23; padding: 4em 0; text-align: center;  }
+.divider-dark                       { background-color: #362b23; height:1em; }
+.fine-folks                         { margin: 2em  }
+
+.sold-out {
+    background-color: rgb(0, 190, 190);
+    padding: 0.5em 1em;
+    display: inline-block;
+    border-radius: 3em;
+    margin-bottom: 1.1em;
+}
+
+.email {
+    width: 300px;
+    margin: 1em 0;
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+}
+
+.email-submit {
+    color: white;
+    background-color: rgb(54, 43, 35);
+    margin: 1em 0;
+    text-align: center;
+    padding: 1em 3em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+    position: relative;
+    left: -5px;
+}
+
+.email-submit:hover {
+    color: white;
+    background: rgb(33, 27, 22);
+}
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Images
+----------------------------------------------------------------------------------------------------------
+*/
+
+.logo                                       { background-image: url(/img/2013/bb-logo.png); text-indent: -999999px; display: block; width: 100%; -webkit-background-size: contain; -moz-background-size: contain;  -o-background-size: contain;    background-size: contain; background-position: center center; height: 6em; background-position:center; margin: .5em 0 2em 0; background-repeat: no-repeat}
+.beyond-logo                                        { background-image: url(/img/2013/beyondb-logo.png); text-indent: -999999px; display: block; width: 100%; -webkit-background-size: contain;    -moz-background-size: contain;  -o-background-size: contain;    background-size: contain; background-position: center center; height: 6em; background-position:center; margin: .5em 0 2em 0; background-repeat: no-repeat}
+.fictive-kin                        { background-image: url(/img/2013/fictive-kin.png); text-indent: -999999px; display: block; width: 220px; height: 69px; text-indent: -999999px; margin: auto auto 1em auto}
+.arrow                                  { background-image: url(/img/2013/arrow.png); width: 16px; height: 39px; margin: 1em auto 0}
+.quote-profile-pic          { padding: 4px; border: 1px solid #e0dcd3; width: 100px; height: 100px;-webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; display: block; margin: auto auto .5em; -moz-transition: all 0.1s ease-out;  -o-transition: all 0.1s ease-out; -webkit-transition: all 0.1s ease-out; -ms-transition: all 0.1s ease-out; transition: all 0.1s ease-out; }
+.josh:hover                         { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -moz-transition: all 0.1s ease-out;  -o-transition: all 0.1s ease-out; -webkit-transition: all 0.1s ease-out; -ms-transition: all 0.1s ease-out; transition: all 0.1s ease-out;}
+
+/* Tables */
+
+table                                       { width: 100% }
+th                                          { width: 25%; padding: 1em; border: 1px #f8f4eb solid; background-color: #362b23; color: white; font-size:0.700em; text-transform: uppercase; font-weight: bold }
+td                                          { width: 25%; padding: 1em; border: 1px #f8f4eb solid; background-color: #ede8dc;}
+.table-main                         { background-color: #ac0818; color: white; font-weight: bold  }
+.table-beyond                       { background-color: #00bebe; color: white; font-weight: bold }
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Typography
+----------------------------------------------------------------------------------------------------------
+*/
+
+body,
+input,
+textarea,
+button                                  { font-size: 125%; line-height: 1.5; font-weight: 400; font-family: "ff-meta-web-pro", Helvetica, Arial, sans-serif; color:#272625; }
+
+/* Styles */
+.normal                                 { font-weight:normal }
+.strong                                 { font-weight:bold }
+.italic                                 { font-style:italic }
+.small                                  { font-size:0.700em; line-height: 1.5em }
+.uppercase                          { text-transform: uppercase }
+.strikethrough                  { text-decoration: line-through; }
+.para                                       { margin-bottom: 2em}
+.grey                                       { color: #b9b5ad }
+.white                                  { color: white }
+.red                                        { color: #ac0818 }
+.quote                                  { line-height:1.4em; font-size: .9; font-style: italic; font-family: "kepler-std-semicondensed", Georgia, Times, "Times New Roman", serif; margin-bottom: .5em }
+p.dropcap:first-child:first-letter { float: left; color: #00bebe; font-family: "quatro-slab", Helvetica, Arial, sans-serif; font-size: 6em; line-height: 64px; font-weight: 900; padding-top: 10px; padding-right: 8px;}
+.dot                                        { margin: 0 1em }
+.month                                  { background-color: #362b23; text-transform: uppercase; padding: .4em 0}
+.date                                       { font-family: "quatro-slab", Helvetica, Arial, sans-serif; font-size: 3em; font-weight: 900; color: white; margin-bottom: .2em; margin-top: 0}
+
+/* Headings */
+h1                                          { font-size:1.4em; font-weight: 900; font-family: "quatro-slab", Helvetica, Arial, sans-serif;}
+
+h2                                          { font-size:1.4em; color: #362b23; font-family: "quatro-slab", Helvetica, Arial, sans-serif;}
+h3                                          { font-size:1.2em; font-family: "quatro-slab", Helvetica, Arial, sans-serif; color: #ac0818}
+h4                                          { font-weight: bold; margin-bottom: 1em}
+
+.heading                                { text-align:center; border-bottom:1px solid #e0dcd3; margin-bottom: 4em}
+.heading h3                         { display:inline-block; position:relative; top:0.800em; background:#fff; padding:0 .825em;}
+.banner-beige .heading h3                       { background:#f8f4eb; }
+.banner-green .heading h3                       { background:#00bebe; color: white }
+.banner-green .heading                              { border-bottom:1px solid #009fa0;}
+
+/* A */
+a                                               { color:#00bebe; text-decoration:none; -moz-transition: all 0.1s ease-out;  -o-transition: all 0.1s ease-out; -webkit-transition: all 0.1s ease-out; -ms-transition: all 0.1s ease-out; transition: all 0.1s ease-out; }
+a:hover                                 { color:#009f9f;}
+.button                                 { color: white; padding: 1em 3em; background: #362b23;-webkit-border-radius: 3em; -moz-border-radius: 3em; border-radius: 3em; display: inline-block; text-align: center;}
+.button:hover                       { color: white; background: #211b16;}
+.button-small                       { color: white; padding: .5em 1.5em; font-size:0.700em; background: #362b23; -webkit-border-radius: 1.5em; -moz-border-radius: 1.5em; border-radius: 1.5em; display: inline-block; text-align: center;  text-transform: uppercase; margin-top: 1em  }
+.button-small:hover         { color: white; background: #211b16;}
+.button-small-green         { color: white; padding: .5em 1.5em; font-size:0.700em; background: #00bebe; -webkit-border-radius: 1.5em; -moz-border-radius: 1.5em; border-radius: 1.5em; display: inline-block; text-align: center;  text-transform: uppercase; margin-top: 1em  }
+.button-small-green:hover       { color: white; background: #009e9e; }
+.button-small-red               { color: white; padding: .5em 1.5em; font-size:0.700em; background: #ac0818; -webkit-border-radius: 1.5em; -moz-border-radius: 1.5em; border-radius: 1.5em; display: inline-block; text-align: center;  text-transform: uppercase; margin-top: 1em  }
+.button-small-red:hover { color: white; background: #84000d; }
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Navigation and lists
+----------------------------------------------------------------------------------------------------------
+*/
+
+.menu                                       { background-color: #362b23; position: absolute; width: 100%; z-index: 2}
+.nav-container                  { position: relative }
+ul.nav                                  { width: 100% }
+ul.nav li                           { list-style: none; display: inline-block; width: 19%; text-align: center}
+ul.nav li a                         { display: block; text-align: center; padding: 1.5em 0; color: white; letter-spacing: 1px; font-size: 0.667em; text-transform: uppercase;}
+ul.nav li a:hover           { color:white; background-color: #00bebe;}
+.b                                          { background-image: url(/img/2013/b.png); text-indent: -999999px; display: inline-block; width: 45px; height:75px; position: absolute; top:0; margin-left: -32px;}
+
+#home .nav li a.home,
+#beyond .nav li a.beyond,
+#schedule .nav li a.schedule-page,
+#attendees .nav li a.attendees { color: white; background-color: #211b16}
+
+
+
+input {
+    padding: 1em;
+    border: 0px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    font-size: 0.7em;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 4px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 4px 0px inset;
+}
+
+
+
+
+/* 
+---------------------------------------------------------------------------------------------------------- 
+02 Form
+---------------------------------------------------------------------------------------------------------- 
+*/
+
+
+input                                       { padding: 1em;  border: 0; font-size: 0.700em;  -moz-transition: all 0.2s ease-out;  -o-transition: all 0.2s ease-out; -webkit-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out;outline: none;  -webkit-appearance: none;-moz-box-shadow: inset 0 4px 0 rgba(0,0,0,0.1); -webkit-box-shadow: inset 0 4px 0 rgba(0,0,0,0.1); box-shadow: inset 0 4px 0 rgba(0,0,0,0.1);  }
+input:hover                         { }
+input:focus                         { border-right-color: white;  -moz-box-shadow: 0 0 10px rgba(255,255,255, 0.5); -webkit-box-shadow: 0 0 10px rgba(255,255,255, 0.5); box-shadow: 0 0 10px rgba(255,255,255, 0.5);}
+
+input.email                         { width: 300px; margin: 1em 0;-webkit-border-top-left-radius: 3em; -webkit-border-bottom-left-radius: 3em; -moz-border-radius-topleft: 3em; -moz-border-radius-bottomleft: 3em; border-top-left-radius: 3em; border-bottom-left-radius: 3em; }
+input.email-submit          { color: white; background-color: #362b23; margin: 1em 0; text-align: center; padding: 1em 3em;-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; cursor: pointer; -webkit-border-top-right-radius: 3em; -webkit-border-bottom-right-radius: 3em; -moz-border-radius-topright: 3em; -moz-border-radius-bottomright: 3em; border-top-right-radius: 3em; border-bottom-right-radius: 3em; }
+input.email-submit:hover                        { color: white; background: #211b16;}
+
+
+
+
+/*
+----------------------------------------------------------------------------------------------------------
+02 Media Queries
+----------------------------------------------------------------------------------------------------------
+*/
+
+@media screen and (max-width: 700px){
+
+body                                        { font-size: 100%; }
+
+.container                          { width: 96%; }
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-half,
+.grid-full,
+.grid-quater                        { float: left; width:96.969696969697%; margin:0 1.515151515152% 1em; }
+ul.nav li                           { list-style: none; display: inline-block; width: 24%; text-align: center}
+ul.nav li.li-zero           { width: 0}
+ul.nav li a                         { display: block; text-align: center; padding: 1.5em 0; color: white; letter-spacing: 0; font-size: 0.667em; text-transform: uppercase;}
+.b                                          { display: none;}
+h1                                          { font-size: 2em }
+#left-border,
+#right-border                   { top: 0; bottom: 0; width: 4px; }
+#left-border                        { left: 0; }
+#right-border                   { right: 0; }
+#top-border,
+#bottom-border                  { left: 0; right: 0; height: 4px; }
+#top-border                         { top: 0; }
+#bottom-border                  { bottom: 0; }
+.page                                       { width: 92% }
+.date                                       { display: block }
+.hide                                       { display: none }
+.email-input                        { width: 100%; float: none; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; border-right-color: #e5e5e5; text-align: center}
+.submit-input                       { width: 100%; float: none; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.logo                                       { background-position:center; margin: .5em 0 1em 0; height: auto}
+.beyond-logo                        { background-position:center; margin: .5em 0 1em 0; height: auto}
+.quote-profile-pic          { padding: 0; border: 0;}
+.small                                  { font-size: .9em }
+.beyond-card                        {padding: 1em 1em 2em; border: 1px solid #e0dcd3; height: auto;}
+input.email                         { width: 150px }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+
+body                                        { font-size: 105%; }
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+
+body                                        { font-size: 115%; }
+
+}
+
+/* Responsive images for masonry layout */
+
+.ac-avatar {
+	overflow: hidden;
+	padding-bottom: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.ac-avatar > img {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
